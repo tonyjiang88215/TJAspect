@@ -31,5 +31,5 @@ export declare class Aspect implements IAspect {
     after(targetName: string, pointcutName: string): (target: any, adviceName: any) => void;
     intercept(targetName: string, pointcutName: string): (target: any, adviceName: any) => void;
 }
-declare const _default: Aspect;
+declare var _default: Aspect;
 export default _default;

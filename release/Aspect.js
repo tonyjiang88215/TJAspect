@@ -4,12 +4,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
         function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
+        step((generator = generator.apply(thisArg, _arguments)).next());
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t;
+    return { next: verb(0), "throw": verb(1), "return": verb(2) };
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -34,7 +34,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var InterceptAdviceType = "interceptAdvices";
 var BeforeAdviceType = "beforeAdvices";
 var AfterAdviceType = "afterAdvices";
@@ -141,7 +140,8 @@ var AspectProxy = (function () {
                             i = 0;
                             _b.label = 2;
                         case 2:
-                            if (!(i < advices.interceptAdvices.length)) return [3 /*break*/, 5];
+                            if (!(i < advices.interceptAdvices.length))
+                                return [3 /*break*/, 5];
                             _a = advices.interceptAdvices[i], injector = _a.injector, config = _a.config;
                             return [4 /*yield*/, injector[config.advice].apply(injector, args)];
                         case 3:
@@ -296,15 +296,16 @@ var Aspect = (function () {
             };
         };
     };
-    Aspect.PointcutMark = "PointcutMark";
-    Aspect.AdviceMark = "AdviceMark";
-    Aspect.BeforeAdviceMark = "Before";
-    Aspect.AfterAdviceMark = "After";
-    Aspect.InterceptAdviceMark = "Intercept";
-    Aspect.AspectTarget = "__$$AspectTarget";
-    Aspect.AspectAdvice = "__$$AspectAdvice";
     return Aspect;
 }());
+Aspect.PointcutMark = "PointcutMark";
+Aspect.AdviceMark = "AdviceMark";
+Aspect.BeforeAdviceMark = "Before";
+Aspect.AfterAdviceMark = "After";
+Aspect.InterceptAdviceMark = "Intercept";
+Aspect.AspectTarget = "__$$AspectTarget";
+Aspect.AspectAdvice = "__$$AspectAdvice";
 exports.Aspect = Aspect;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Aspect.getInstance();
 //# sourceMappingURL=Aspect.js.map
